@@ -4,21 +4,22 @@ block content
     .card.border-success.mb-3(style='max-width: 20rem;')
         .card-header Register
         .card-body
-            form
-                fieldset
-                    .form-group
-                        label(for='inputName') Full Name
-                        input#inputName.form-control(type='text', placeholder='Enter full name')
-                    .form-group
-                        label(for='inputEmail') Email address
-                        input#inputEmail.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
-                        small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
-                    .form-group
-                        label(for='inputPassword') Password
-                        input#inputPassword.form-control(type='password', placeholder='Password')
-                    fieldset.form-group
-                        .form-check
-                            label.form-check-label
-                                input.form-check-input(type='checkbox', value='', checked=false)
-                                |           I agree to the terms and conditions of habeshamingle.com
-                    button.btn.btn-primary(type='submit') Submit
+            form(action='/register', method='post', role='form')
+                - if (error === "val")
+                    .alert.alert-danger(role='alert') All fields required, please try again.
+                .form-group
+                    label(for='name') Full Name
+                    input#name.form-control(type='text', placeholder='Enter full name')
+                .form-group
+                    label(for='email') Email address
+                    input#email.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+                    small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+                .form-group
+                    label(for='password') Password
+                    input#password.form-control(type='password', placeholder='Password')
+                fieldset.form-group
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox', value='', checked=false)
+                            |           I agree to the terms and conditions of habeshamingle.com
+                button.btn.btn-primary(type='submit') Register

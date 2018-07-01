@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 0 50px 0 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -10,4 +10,14 @@ a {
 .card {
   float: none;
   margin: 0 auto 10px;
+}
+
+nav {
+  margin-bottom: 50px;
+}
+
+/* Fixes dropdown menus placed on the right side */
+ul.navbar-nav.ml-auto {
+  left: auto !important;
+  right: 0;
 }
