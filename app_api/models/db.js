@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 require('./users');
 var dbURI = 'mongodb://localhost/habeshamingle';
+
 if (process.env.NODE_ENV === 'production'){
     dbURI = process.env.MONGOLAB_URI;
 }
